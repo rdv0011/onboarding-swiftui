@@ -15,7 +15,7 @@ let imageNames = ["screen1",
                    "screen3",
                    "screen4"]
 let titles = ["Easy payments with \nWallettory",
-              "Free cache withdraw \nWallettory",
+              "Free cash withdrawing \nWallettory",
               "Cache back with \nWallettory",
               "Special bonuses with \nWallettory"]
 let descriptions = ["Small business can receive \npayment fast and super easy",
