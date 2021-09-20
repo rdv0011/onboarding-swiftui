@@ -19,6 +19,9 @@
 		F16585E526F8B51700F2F96A /* OnBoardingModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585E426F8B51700F2F96A /* OnBoardingModelView.swift */; };
 		F16585E726F8E81800F2F96A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F16585E626F8E81800F2F96A /* README.md */; };
 		F16585EA26F8EC3600F2F96A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585E926F8EC3500F2F96A /* ViewFactory.swift */; };
+		F16585ED26F8FBF800F2F96A /* PageControlCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */; };
+		F16585EF26F8FD3300F2F96A /* PageControlCirclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */; };
+		F16585F126F9085F00F2F96A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585F026F9085F00F2F96A /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F16585E426F8B51700F2F96A /* OnBoardingModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModelView.swift; sourceTree = "<group>"; };
 		F16585E626F8E81800F2F96A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F16585E926F8EC3500F2F96A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCircles.swift; sourceTree = "<group>"; };
+		F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCirclesViewModel.swift; sourceTree = "<group>"; };
+		F16585F026F9085F00F2F96A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				F1499BEC26F6333000442413 /* Preview Content */,
 				F1499BFA26F6376300442413 /* Model */,
 				F1499BFD26F6382900442413 /* View */,
+				F16585EB26F8FBD900F2F96A /* ReusableViews */,
 				F16585E826F8EC2600F2F96A /* Utils */,
 			);
 			path = onboarding;
@@ -115,6 +122,16 @@
 				F16585E926F8EC3500F2F96A /* ViewFactory.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F16585EB26F8FBD900F2F96A /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */,
+				F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */,
+				F16585F026F9085F00F2F96A /* Buttons.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +208,10 @@
 				F1499BFF26F6383F00442413 /* OffsetPageTabView.swift in Sources */,
 				F1499BE526F6332D00442413 /* AppDelegate.swift in Sources */,
 				F1499BF926F6334B00442413 /* BoardingScreenInformation.swift in Sources */,
+				F16585F126F9085F00F2F96A /* Buttons.swift in Sources */,
+				F16585ED26F8FBF800F2F96A /* PageControlCircles.swift in Sources */,
 				F16585E526F8B51700F2F96A /* OnBoardingModelView.swift in Sources */,
+				F16585EF26F8FD3300F2F96A /* PageControlCirclesViewModel.swift in Sources */,
 				F1499BE726F6332D00442413 /* SceneDelegate.swift in Sources */,
 				F16585E326F8B3E000F2F96A /* View+Extension.swift in Sources */,
 				F1499BFC26F6377D00442413 /* OnBoarding.swift in Sources */,

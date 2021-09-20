@@ -3,6 +3,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class OnBoardingViewModel: ObservableObject {
     // Get a screen width from View
@@ -41,14 +42,6 @@ final class OnBoardingViewModel: ObservableObject {
 
     init(onBoardingScreensInfo: [BoardingScreenInformation]) {
         self.onBoardingScreensInfo = onBoardingScreensInfo
-    }
-
-    // Paging control circle opacity
-    func pagingControlCircleOpacity(for index: Int) -> Double {
-        index == screenIndex ? 1: 0.8
-    }
-    func pagingControlCircleScaleEffect(for index: Int) -> CGFloat {
-        index == screenIndex ? 1.3: 0.85
     }
 
     func nextButtonPressed() {

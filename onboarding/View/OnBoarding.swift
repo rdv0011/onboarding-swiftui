@@ -6,6 +6,11 @@ import SwiftUI
 struct OnBoarding: View {
     @ObservedObject var viewModel: OnBoardingViewModel
 
+    private var bindableScreenIndex: Binding<Int> {
+        Binding(get: { viewModel.screenIndex },
+                set: { _ in })
+    }
+
     var body: some View {
         OffsetPageTabView(offset: $viewModel.offset) {
             HStack(spacing: 0) {
@@ -53,56 +58,21 @@ struct OnBoarding: View {
         .overlay(
             VStack {
                 HStack(spacing: 25) {
-                    Button {
-
-                    } label: {
-                        Text("Login as iService")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 20)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .clipShape(Capsule())
-                    }
-                    Button {
-
-                    } label: {
-                        Text("SignUp")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .offset(x: -5)
-                            .padding(.vertical, 20)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .clipShape(Capsule())
-                    }
+                    CapsuleButton(action: {
+                    }, labelText: "Login as iService")
+                    CapsuleButton(action: {
+                    }, labelText: "SignUp")
                 }
                 HStack() {
-                    Button {
-
-                    } label: {
-                        Text("Skip")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                    }
+                    SmallButton(action: {
+                    }, labelText: "Skip")
                     HStack(spacing: 8) {
-                        ForEach(viewModel.onBoardingScreensInfo.indices, id: \.self) { index in
-                            Circle()
-                                .fill(Color.white)
-                                .opacity(viewModel.pagingControlCircleOpacity(for: index))
-                                .frame(width: 8, height: 8)
-                                .scaleEffect(viewModel.pagingControlCircleScaleEffect(for: index))
-                                .animation(.easeOut, value: viewModel.screenIndex)
-                        }
+                        PageControlCircles(viewModel: PageControlCirclesViewModel(screenIndex: bindableScreenIndex, indices: viewModel.onBoardingScreensInfo.indices))
                     }
                     .frame(maxWidth: .infinity)
-                    Button {
+                    SmallButton(action: {
                         viewModel.nextButtonPressed()
-                    } label: {
-                        Text("Next")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                    }
+                    }, labelText: "Next")
                 }
                 .padding(.top, 25)
                 .padding(.horizontal, 8)
