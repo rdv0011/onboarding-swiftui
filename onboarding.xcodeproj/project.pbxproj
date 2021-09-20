@@ -109,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				F1499BFB26F6377D00442413 /* OnBoarding.swift */,
-				F1499BFE26F6383F00442413 /* OffsetPageTabView.swift */,
 				F16585E426F8B51700F2F96A /* OnBoardingModelView.swift */,
 			);
 			path = View;
@@ -127,6 +126,7 @@
 		F16585EB26F8FBD900F2F96A /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				F1499BFE26F6383F00442413 /* OffsetPageTabView.swift */,
 				F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */,
 				F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */,
 				F16585F026F9085F00F2F96A /* Buttons.swift */,
