@@ -116,13 +116,6 @@ struct OnBoarding: View {
 
 struct OnBoarding_Preview: PreviewProvider {
     static var previews: some View {
-        var view: OnBoarding? = nil
-        view = OnBoarding(viewModel: OnBoardingViewModel(onBoardingScreensInfo: boardingScreens) {
-            view?.screenBounds().width ?? 0
-        })
-        guard let contentView = view else {
-            fatalError("View is nil")
-        }
-        return contentView
-    }
+        ViewFactory().makeOnBoardingView()
+    } 
 }

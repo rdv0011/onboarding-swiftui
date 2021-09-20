@@ -21,21 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: makeContentView())
+            window.rootViewController = UIHostingController(rootView: ViewFactory().makeOnBoardingView())
             self.window = window
             window.makeKeyAndVisible()
         }
-    }
-
-    private func makeContentView() -> OnBoarding {
-        var view: OnBoarding? = nil
-        view = OnBoarding(viewModel: OnBoardingViewModel(onBoardingScreensInfo: boardingScreens) {
-            view?.screenBounds().width ?? 0
-        })
-        guard let contentView = view else {
-            fatalError("View is nil")
-        }
-        return contentView
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

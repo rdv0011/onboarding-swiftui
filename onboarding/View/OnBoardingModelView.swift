@@ -6,7 +6,7 @@ import UIKit
 
 final class OnBoardingViewModel: ObservableObject {
     // Get a screen width from View
-    var screenWidth: ()->CGFloat
+    var screenWidth: (()->CGFloat)?
     // Screen offset
     @Published var offset: CGFloat = 0
     // Screen index
@@ -28,7 +28,10 @@ final class OnBoardingViewModel: ObservableObject {
     }
 
     private var oneScreenOffset: CGFloat {
-        screenWidth()
+        guard let screenWidth = screenWidth?() else {
+            fatalError("Expected screen width block is not nil")
+        }
+        return screenWidth
     }
 
     private var progress: CGFloat {
@@ -36,10 +39,8 @@ final class OnBoardingViewModel: ObservableObject {
     }
     let onBoardingScreensInfo: [BoardingScreenInformation]
 
-    init(onBoardingScreensInfo: [BoardingScreenInformation],
-         screenWidth: @escaping () -> CGFloat) {
+    init(onBoardingScreensInfo: [BoardingScreenInformation]) {
         self.onBoardingScreensInfo = onBoardingScreensInfo
-        self.screenWidth = screenWidth
     }
 
     // Paging control circle opacity
