@@ -21,7 +21,7 @@ struct OnBoarding: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: screenBounds().width - 100,
                                    height: screenBounds().width - 100)
-                            .offset(y: -80)
+                            .offset(y: -50)
                         VStack(alignment: .leading, spacing: 12) {
                             Text(screen.title)
                                 .font(.largeTitle.bold())
@@ -51,8 +51,7 @@ struct OnBoarding: View {
             , alignment: .leading
         )
         .background(
-            Color(viewModel.backgroundColorName)
-                .animation(.easeInOut, value: viewModel.backgroundColorIndex)
+            viewModel.backgroundColor
         )
         .ignoresSafeArea(.container, edges: .all)
         .overlay(

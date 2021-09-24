@@ -22,6 +22,7 @@
 		F16585ED26F8FBF800F2F96A /* PageControlCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */; };
 		F16585EF26F8FD3300F2F96A /* PageControlCirclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */; };
 		F16585F126F9085F00F2F96A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16585F026F9085F00F2F96A /* Buttons.swift */; };
+		F165AD6A26FB65FC005A6134 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F165AD6926FB65FC005A6134 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F16585EC26F8FBF800F2F96A /* PageControlCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCircles.swift; sourceTree = "<group>"; };
 		F16585EE26F8FD3300F2F96A /* PageControlCirclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCirclesViewModel.swift; sourceTree = "<group>"; };
 		F16585F026F9085F00F2F96A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		F165AD6926FB65FC005A6134 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				F16585E226F8B3E000F2F96A /* View+Extension.swift */,
 				F16585E926F8EC3500F2F96A /* ViewFactory.swift */,
+				F165AD6926FB65FC005A6134 /* UIColor+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				F16585E326F8B3E000F2F96A /* View+Extension.swift in Sources */,
 				F1499BFC26F6377D00442413 /* OnBoarding.swift in Sources */,
 				F16585EA26F8EC3600F2F96A /* ViewFactory.swift in Sources */,
+				F165AD6A26FB65FC005A6134 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

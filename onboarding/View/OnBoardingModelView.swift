@@ -12,32 +12,55 @@ final class OnBoardingViewModel: ObservableObject {
     @Published var offset: CGFloat = 0
     // Screen index
     var screenIndex: Int {
-        Int(progress)
+        Int(screenIndexProgress)
     }
-    // Background color name
-    var backgroundColorName: String {
-        "screen\(backgroundColorIndex + 1)"
-    }
-    // Background color based on offset
-    var backgroundColorIndex: Int {
-        screenIndex
+    var backgroundColor: Color {
+        Color(backgroundColorFrom
+                .interpolate(to: backgroundColorTo,
+                             fraction: backgroundColorProgress))
     }
     // Background rotation angle in degrees
     var backgroundRotation: Double {
-        let progress = progress / 4
+        let progress = screenIndexProgress / 4
         return Double(progress) * 360
     }
 
-    private var oneScreenOffset: CGFloat {
+    private var colorIndexTo: Int {
+        Int(Double(screenIndexProgress).rounded(.up))
+    }
+    // Background color name to interpolate to
+    private var backgroundColorTo: UIColor {
+        guard let color = UIColor(named: colorName(by: colorIndexTo)) else {
+            return .clear
+        }
+        return color
+    }
+    private var colorIndexFrom: Int {
+        Int(Float(screenIndexProgress).rounded(.down))
+    }
+    // Background color name to interpolate from
+    private var backgroundColorFrom: UIColor {
+        guard let color = UIColor(named: colorName(by: colorIndexFrom)) else {
+            return .clear
+        }
+        return color
+    }
+    private var backgroundColorProgress: CGFloat {
+        screenIndexProgress.truncatingRemainder(dividingBy: 1)
+    }
+
+    private var oneScreenWidth: CGFloat {
         guard let screenWidth = screenWidth?() else {
             fatalError("Expected screen width block is not nil")
         }
         return screenWidth
     }
 
-    private var progress: CGFloat {
-        offset / oneScreenOffset
+    private var screenIndexProgress: CGFloat {
+        max(offset / oneScreenWidth, 0)
     }
+
+
     let onBoardingScreensInfo: [BoardingScreenInformation]
 
     init(onBoardingScreensInfo: [BoardingScreenInformation]) {
@@ -45,8 +68,12 @@ final class OnBoardingViewModel: ObservableObject {
     }
 
     func nextButtonPressed() {
-        let nextValue = offset + oneScreenOffset
-        let maxValue = CGFloat(onBoardingScreensInfo.count - 1) * oneScreenOffset
+        let nextValue = offset + oneScreenWidth
+        let maxValue = CGFloat(onBoardingScreensInfo.count - 1) * oneScreenWidth
         offset = min(nextValue, maxValue)
+    }
+
+    private func colorName(by screenIndex: Int) -> String {
+        "screen\(screenIndex + 1)"
     }
 }
